@@ -12,17 +12,19 @@
     <main class="conteiner">
         <h1>Encripta tu texto</h1>
         <div class=" encriptar-texto">
-            <input type="text" class="text-box" required minlength="4">
+            <input type="text" class="text-box" id="text-box" required minlength="4">
             <p>Solo letras minúsculas y sin acentos</p>
             <div class="conteiner-button">
-                <button class="button">Encriptar</button>
+                <button class="button" id="encriptar" onclick="encriptador()">Encriptar</button>
                 <button class="button button-desencriptar">Desencriptar</button>
             </div>
         </div>
         <script src="/app.js"></script>
         <div class="texto-encriptado"></div>
     </main>
-    <footer><p>Create by Fabián Salamanca 2024</p></footer>
+    <footer>
+        <p>Create by Fabián Salamanca 2024</p>
+    </footer>
 </body>
 
 </html>

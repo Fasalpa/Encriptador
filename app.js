@@ -16,4 +16,10 @@ function encriptador() {
   let remplazar3 = remplazar2.replace("3", "imes");
   let remplazar4 = remplazar3.replace("4", "ober");
   let remplazar5 = remplazar4.replace("5", "ufat");
+
+  //llamar panel-encriptado y remplazar el contenido por el texto.
+
+  document.getElementById("panel-encriptado").innerText = remplazar5;
+
 }
+

@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
+:root {
+  /* Colores pagina login */
+  --spring: #dae0cb9a;
+  /*fondo*/
+  --matcha: #a7bb99;
+  /*cajas*/
+  --khakilinen: #c7c2ab;
+  /*letras con links*/
+  --almond: #f3f0e7;
+  /* colores de */
+  --sage: #9c9e80;
+  --truffle: #605f4b;
+  --copper: #eb8f0e;
+  /*letras <p></p>*/
+  --sand: #cdad85;
+  --chai: #d2ab80;
+  --terracotta: #c47457;
+  --carob: #725c3a;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
+  --xlg: 20px;
+  --xl: 40px;
+  --xxl: 62px;
+  --xxxl: 100px;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  background-color: var(--spring);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.conteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  background-color: var(--matcha);
+}
+.encriptar-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.text-box {
+  border-bottom: 32px;
+  width: 150%;
+  height: 400px;
+  background: var(--almond);
+}
+.texto-encriptado {
+  height: 85%;
+  width: 20%;
+  background-color: var(--almond);
+  margin-right: 5%;
+}
+
+p {
+  font-size: var(--sm);
+  height: 1.8%;
+  width: 250px;
+  margin-top: 5%;
+}
+.conteiner-button {
+  margin-top: 1%;
+  height: 100%;
+  width: 70%;
+  background-color: var(--sand);
+  display: flex;
+  gap: 16px;
+}
+.button {
+  background: var(--almond);
+  color: var(--matcha);
+  font-size: var(--md);
+  font-weight: bold;
+  height: 67px;
+  width: 180px;
+  border: solid var(--carob) 1px;
+  border-radius: 36px;
+}
+.button:hover {
+  background-color: var(--khakilinen);
+  color: white;
+}
+
+.button-desencriptar {
+}

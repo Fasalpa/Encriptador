@@ -1,3 +1,23 @@
+function copiar() {
+  let textoPanel = document.getElementById("texto-transformado").textContent;
+  navigator.clipboard.writeText(textoPanel);
+  alert("Copied the text: " + textoPanel);
+}
+
+function agregarBoton() {
+  let comprobacionBoton = document.getElementById("boton-copiar");
+
+  if (!comprobacionBoton) {
+    const botonCopiar = document.createElement("button");
+    botonCopiar.innerHTML = "Copiar";
+    botonCopiar.id = "boton-copiar";
+    botonCopiar.onclick = function () {
+      copiar();
+    };
+    document.getElementById("panel-encriptado").appendChild(botonCopiar);
+  }
+}
+
 function encriptador() {
   let textoPorEncriptar = document.getElementById("text-box").value;
 
@@ -19,23 +39,26 @@ function encriptador() {
 
   //llamar panel-encriptado y remplazar el contenido por el texto.
 
-  document.getElementById("panel-encriptado").innerText = remplazar5;
+  document.getElementById("texto-transformado").innerText = remplazar5;
+
+  //llamar funcion botón
+  agregarBoton();
 }
 
 function desencriptado() {
   let textoPorDesencriptar = document.getElementById("text-box").value;
-  let remplazarAi = textoPorDesencriptar.replaceAll("ai", "1");
-  let remplazarEnter = remplazarAi.replaceAll("enter", "2");
-  let remplazarImes = remplazarEnter.replaceAll("imes", "3");
-  let remplazarOber = remplazarImes.replaceAll("ober", "4");
-  let remplazarUfat = remplazarOber.replaceAll("ufat", "5");
 
-  //reemplazo por clave
-  let remplazar1 = remplazarUfat.replaceAll("1", "a");
-  let remplazar2 = remplazar1.replaceAll("2", "e");
-  let remplazar3 = remplazar2.replaceAll("3", "i");
-  let remplazar4 = remplazar3.replaceAll("4", "o");
-  let remplazar5 = remplazar4.replaceAll("5", "u");
+  let desencriptado = textoPorDesencriptar
+    .replaceAll("ai", "a")
+    .replaceAll("enter", "e")
+    .replaceAll("imes", "i")
+    .replaceAll("ober", "o")
+    .replaceAll("ufat", "u");
 
-  document.getElementById("panel-encriptado").innerText = remplazar5;
+  let contenedorTexto = document.getElementById("texto-transformado");
+  contenedorTexto.innerText = desencriptado;
+
+  //llamar funcion botón
+
+  agregarBoton();
 }

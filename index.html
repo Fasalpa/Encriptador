@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,17 +10,30 @@
 
 <body>
     <main class="conteiner">
-        <h1>Encripta tu texto</h1>
         <div class=" encriptar-texto">
-            <input type="text" class="text-box" id="text-box" required minlength="4">
-            <p>Solo letras minúsculas y sin acentos</p>
-            <div class="conteiner-button">
-                <button class="button" id="encriptar" onclick="encriptador()">Encriptar</button>
-                <button class="button button-desencriptar" onclick="desencriptado()">Desencriptar</button>
+            <div class="contenedor-title">
+                <h1>Encripta tu texto</h1>
             </div>
-        </div>
-        <div class="texto-encriptado" id="panel-encriptado">
-            <p class="texto-transformado" id="texto-transformado"></p>
+            <div class="conteiner-encriptador">
+                <div class="contenedor-input">
+                    <input type="text" class="text-box" id="text-box" required minlength="4">
+                    <div class="contenedor-info">
+                        <img src="/assets/InformationCircle.svg" class="info" alt="informacion">
+                        <p>Solo letras minúsculas y sin acentos</p>
+                    </div>
+                    <div class="conteiner-button">
+                        <button class="button" id="encriptar" onclick="encriptador()" disabled>Encriptar</button>
+                        <button class="button button-desencriptar" id="button-desencriptar" onclick="desencriptado()"
+                            disabled>Desencriptar</button>
+                    </div>
+                </div>
+                <div class="texto-encriptado" id="panel-encriptado">
+                    <div class="texto-transformado" id="texto-transformado">
+                        <img src="/assets/Muñeco.png" alt="">
+                        <img src="/assets/Texto.png" class="texto-not-found" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer>

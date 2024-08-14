@@ -5,17 +5,25 @@ function copiar() {
 }
 
 function agregarBoton() {
-  let comprobacionBoton = document.getElementById("boton-copiar");
+  // Selecciona el contenedor
+  const panelEncriptado = document.getElementById("texto-transformado");
 
-  if (!comprobacionBoton) {
-    const botonCopiar = document.createElement("button");
-    botonCopiar.innerHTML = "Copiar";
-    botonCopiar.id = "boton-copiar";
-    botonCopiar.onclick = function () {
-      copiar();
-    };
-    document.getElementById("panel-encriptado").appendChild(botonCopiar);
+  // Elimina el botón existente si hay uno
+  const botonExistente = document.getElementById("boton-copiar");
+  if (botonExistente) {
+    botonExistente.remove();
   }
+
+  // Crea un nuevo botón
+  const botonCopiar = document.createElement("button");
+  botonCopiar.innerHTML = "Copiar";
+  botonCopiar.id = "boton-copiar";
+  botonCopiar.onclick = function () {
+    copiar();
+  };
+
+  // Añade el nuevo botón al contenedor
+  panelEncriptado.appendChild(botonCopiar);
 }
 
 function encriptador() {
@@ -37,7 +45,7 @@ function encriptador() {
   let remplazar4 = remplazar3.replaceAll("4", "ober");
   let remplazar5 = remplazar4.replaceAll("5", "ufat");
 
-  //llamar panel-encriptado y remplazar el contenido por el texto.
+  //llamar texto-transformado y remplazar el contenido por el texto.
 
   document.getElementById("texto-transformado").innerText = remplazar5;
 
@@ -62,3 +70,32 @@ function desencriptado() {
 
   agregarBoton();
 }
+
+const textBox = document.getElementById("text-box");
+const botonEncriptar = document.getElementById("encriptar");
+const botonDesencriptar = document.getElementById("button-desencriptar");
+const contenidoEncriptaDesencriptado =
+  document.getElementById("texto-transformado");
+
+function verificarTexto() {
+  const regexNoPermitido =
+    /[A-ZÁÉÍÓÚÑáéíóúñ!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+  if (textBox.value.trim() !== "") {
+    if (regexNoPermitido.test(textBox.value)) {
+      alert(
+        "El texto no debe contener mayúsculas, caracteres especiales ni tildes."
+      );
+      botonEncriptar.disabled = true;
+      botonDesencriptar.disabled = true;
+      return;
+    }
+    botonEncriptar.disabled = false;
+    botonDesencriptar.disabled = false;
+  } else {
+    botonEncriptar.disabled = true;
+    botonDesencriptar.disabled = true;
+    contenidoEncriptaDesencriptado.innerText = "";
+  }
+}
+textBox.addEventListener("input", verificarTexto);

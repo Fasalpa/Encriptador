@@ -83,7 +83,7 @@ h1 {
   border-radius: 8%;
   height: 70%;
   background: var(--almond);
-  padding: 10px; /* Añade espacio interno sin alterar el tamaño total */
+  padding: 10px;
   box-sizing: border-box;
 }
 
